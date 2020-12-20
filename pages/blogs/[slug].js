@@ -27,7 +27,8 @@ const SingleBlog = ({ blog, query }) => {
         loadRelated();
         Axios.get(`${API}/blogs`)
             .then(res => {
-                var post = res.data.slice(res.data.length-4,res.data.length).reverse()
+                var post = res.data
+                // var post = res.data.slice(res.data.length-4,res.data.length).reverse()
                 setRecent(post)
                 // console.log(post[0].title);
             })
@@ -92,8 +93,8 @@ const SingleBlog = ({ blog, query }) => {
                     <div className="row upperRecent " style={{backgroundColor:"#eeeeee",paddingLeft:'270px'}}>
                         <div className="col-md-12">
                             {
-                                recent === undefined ? "" : (
-                                    recent.map(res => {
+                                recent === undefined ? "" : recent.length<5 ? "" : (
+                                    recent.reverse().slice(0,5).map(res => {
                                         return (
                                             <div>
                                             <a href={`/blogs/${res.slug}`}><div className="row" style={{float:"left",paddingTop:20}}>
@@ -139,7 +140,27 @@ const SingleBlog = ({ blog, query }) => {
                                 <div className="col-sm-3 mt-5 " >
                                     <div className="rec"><h5 className="widgets-title text-center" style={{ backgroundColor: "#333", color: "#e2dee2", paddingTop: 2, paddingBottom: 5 }}>Recent Blogs</h5>
                                         <div style={{ backgroundColor: "#333", color: "#e2dee2", height: 2, marginTop: -20, marginBottom: 10 }}></div>
-                                        <div>
+                                      
+                                      {
+                                        recent === undefined ? "" : recent.length<5 ? recent.reverse().map(res=>{
+                                            return (
+                                             <ul style={{ listStyleType: "square" }} >
+                                             <li style={{ color: "rgba(68,68,68,.3)" }}>
+                                                 <a className="heading-title-new normal-title" href={`/blogs/${res.slug}`}>{res.title}</a>
+                                             </li>
+                                         </ul> 
+                                            )
+                                         }) : recent.reverse().slice(0,5).map(i=>{
+                                           return (
+                                            <ul style={{ listStyleType: "square" }} >
+                                            <li style={{ color: "rgba(68,68,68,.3)" }}>
+                                                <a className="heading-title-new normal-title" href={`/blogs/${i.slug}`}>{i.title}</a>
+                                            </li>
+                                        </ul> 
+                                           )
+                                        }) 
+                                      }
+                                        {/* <div>
                                             <ul style={{ listStyleType: "square" }} >
                                                 <li style={{ color: "rgba(68,68,68,.3)" }}>
                                                     <a className="heading-title-new normal-title" href={`/blogs/${recent === undefined ? "" : recent[0].slug}`}>{recent === undefined ? "" : recent[0].title}</a>
@@ -155,7 +176,7 @@ const SingleBlog = ({ blog, query }) => {
                                             </li>
                                             </ul>
 
-                                        </div>
+                                         </div>*/}
                                     </div>
                                 </div>
                             </div>

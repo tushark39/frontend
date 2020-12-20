@@ -68,7 +68,6 @@ const CreateBlog = ({router})=>{
 
     const publishBlog = (e) =>{
         e.preventDefault();
-        // console.log('Ready to publish a blog ')
         createBlog(formData, token).then(data=>{
             if(data.error){
                 setValues({...values, error: data.error})

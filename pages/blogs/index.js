@@ -26,7 +26,42 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
             }
         });
     };
-
+    const head = () => {
+        return(
+            
+      <Head>
+      <title>Daily News Headlines | {APP_NAME}</title>
+      
+      <meta 
+          name="description" 
+          content="Daily News headline and daily news hits of politics world people celebrity webseries movies and technology "
+          />
+      
+      <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
+      <meta property="og:title" content={`Latest news headline update | ${APP_NAME}`}/>
+      <meta 
+          property="og:description" 
+          content="Daily News headline and daily news hits of politics world people celebrity webseries movies and technology  "
+          />
+      <meta 
+          property="og:type"
+          content="website"
+      />
+      <meta 
+          property="og:url"
+          content={`${DOMAIN}${router.pathname}`}
+      />
+      <meta 
+          property="og:site_name"
+          content={`${APP_NAME}`}
+      />
+      <meta property="og:image" content={`${DOMAIN}/static/images/newsapp.jpg`}/>
+      <meta property="og:image:secure_url" content={`${DOMAIN}/static/images/newsapp.jpg`}/>
+      <meta property="og:image:type" content="image/jpg"/>
+      <meta property="fb:app_id" content={`${FB_APP_ID}`}/>
+      </Head>
+        )
+    }
     const loadMoreButton = () =>{
         return (
             size > 0 && size >= limit && (
@@ -84,38 +119,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
 
     return(
     <React.Fragment>
-      <Head>
-            <title>Daily News Headlines | {APP_NAME}</title>
-            
-            <meta 
-                name="description" 
-                content="Daily News headline and daily news hits of politics world people celebrity webseries movies and technology "
-                />
-            
-            <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
-            <meta property="og:title" content={`Latest news headline update | ${APP_NAME}`}/>
-            <meta 
-                property="og:description" 
-                content="Daily News headline and daily news hits of politics world people celebrity webseries movies and technology  "
-                />
-            <meta 
-                property="og:type"
-                content="website"
-            />
-            <meta 
-                property="og:url"
-                content={`${DOMAIN}${router.pathname}`}
-            />
-            <meta 
-                property="og:site_name"
-                content={`${APP_NAME}`}
-            />
-            <meta property="og:image" content={`${DOMAIN}/static/images/newsapp.jpg`}/>
-            <meta property="og:image:secure_url" content={`${DOMAIN}/static/images/newsapp.jpg`}/>
-            <meta property="og:image:type" content="image/jpg"/>
-            <meta property="fb:app_id" content={`${FB_APP_ID}`}/>
-
-        </Head>
+        {head()}
         <Layout>
             <main style={{backgroundColor:"#e2dee2"}}>
                     <div className="container-fluid" >
@@ -137,14 +141,14 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                         <div className="col-md-1"></div>
                             <div className="col-md-8">
                                 <div className="row" > 
-                                    {showAllBlogs()}
+                                    {showAllBlogs().length===0 ? (<div>Advertisement</div>) : showAllBlogs()}
                                     {showLoadedBlogs()}
                                 </div>
                             </div>
                             <div className="col-md-2">
                             <h5 className="widgets-title text-center" style={{backgroundColor:"#333",color:"#e2dee2",width:150,paddingTop:2,paddingBottom:5}}>Trending tags</h5>
                             <div style={{backgroundColor:"#333",color:"#e2dee2",height:2,marginTop:-20,marginBottom:10}}></div>
-                            {showAllTags()} 
+                            {showAllTags().length===0 ? (<div>Advertisment</div>) : showAllTags()} 
                             </div>
                             <div className="col-md-1"></div>
                         </div>

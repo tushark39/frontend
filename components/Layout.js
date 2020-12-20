@@ -14,13 +14,13 @@ const Layout = ({children}) =>{
          <div className="col-md-9">
             <ul className="topNavBar">
                 <li>
-                <a href="#">About Us</a>
+                <a href="/about-us">About Us</a>
                 </li>
                 <li>
-                <a href="#">Conatct Us</a>
+                <a href="/contact-us">Conatct Us</a>
                 </li>
                 <li>
-                <a href="#">Privacy Policy</a>
+                <a href="/privacy-policy">Privacy Policy</a>
                 </li>
             </ul>
          </div>
