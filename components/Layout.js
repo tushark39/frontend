@@ -36,7 +36,7 @@ const Layout = ({children}) =>{
             </div>
         </div>
             <Header />
-               <div style={{minHeight:'35vh',backgroundColor:"#2d283e"}}> {children}</div>
+               <div style={{minHeight:'35vh',backgroundColor:"#e2dee2"}}> {children}</div>
             <Footer />
         </React.Fragment>
     )
