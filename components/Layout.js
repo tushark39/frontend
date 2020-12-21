@@ -17,7 +17,7 @@ const Layout = ({children}) =>{
                 <a href="/about-us">About Us</a>
                 </li>
                 <li>
-                <a href="/contact-us">Conatct Us</a>
+                <a href="/contact-us">Contact Us</a>
                 </li>
                 <li>
                 <a href="/privacy-policy">Privacy Policy</a>
