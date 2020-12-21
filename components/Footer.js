@@ -33,18 +33,17 @@ useEffect(()=>{
 },[])
 
   return (
-    <React.Fragment>
-        <div className="conatiner-fluid" style={{backgroundColor:"#f1c320",width:"100%",height:2}}></div>
-        <div className="container-fluid" style={{backgroundColor:"#c5cbe3",color:"#d79922",height:'180px'}}>
-            <div className="row">
-                <div className="col-md-2 offset-2 pt-2 text-center">
+    <footer style={{position:'',bottom:0,width:'100%'}}>
+    <div className="container-fluid center" style={{backgroundColor:"#c5cbe3",color:"#d79922"}}>
+            <div className="row pt-3 offset-2 pb-3" >
+            <div className="col-md-2  pt-2 text-center">
                 <a href="javascript:void(0)">Contact-us</a><br/>
                 <a href="javascript:void(0)">About-us</a><br/>
                 <a href="#">Privacy policy</a><br/>
                 <a href="#">Careers</a><br/>
                 <a href="#">Site Map</a><br/>
             </div>
-            <div className="col-md-4 text-center">
+            <div className="col-md-4 text-center pt-3">
             <span style={{fontWeight:"bold"}}>Top Tags:</span><br/>
             <a href="#">News</a><br/>
             <a href="#">Fashion</a><br/>
@@ -53,7 +52,7 @@ useEffect(()=>{
             <a href="#">Movie</a><br/>
             <a href="#">TV-shows</a><br/>  
             </div>
-            <div className="col-md-2 text-center">
+            <div className="col-md-2 text-center pt-3">
                 <span style={{fontWeight:"bold"}}>Top Categories:</span><br/>
                 <a href="#">News</a><br/>
                 <a href="#">Fashion</a><br/>
@@ -63,9 +62,11 @@ useEffect(()=>{
                 <a href="#">TV-shows</a><br/>   
             </div>
             </div>
-        </div>    
+        </div>  
+        <div className="conatiner-fluid" style={{backgroundColor:"#f1c320",width:"100%",height:2}}></div>
+          
         <div className="container-fluid text-center pb-1" style={{backgroundColor:"#f1c320", color:"white"}}><span>&#169; 2020. All Rights Reserved by {APP_NAME}.</span></div>    
-    </React.Fragment>
+    </footer>
   );
 }
 

@@ -1,8 +1,10 @@
 import Layout from '../components/Layout';
 
 const ContactUs = () => (
-    <Layout>
-        Contact us via email contactus@theeguardians.com
+    <Layout >
+        <div style={{minHeight:'35vh'}}>
+        Contact us via email contactus@nextnewsupdate.com
+        </div>
     </Layout>
 )
 

@@ -89,7 +89,7 @@ const SingleBlog = ({ blog, query }) => {
         </Head>
         <Layout >
             <main style={{ backgroundColor: "#e2dee2" }}>
-                <article>
+                <article >
                     <div className="row upperRecent " style={{backgroundColor:"#eeeeee",paddingLeft:'270px'}}>
                         <div className="col-md-12">
                             {
