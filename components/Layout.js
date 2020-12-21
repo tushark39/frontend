@@ -36,7 +36,20 @@ const Layout = ({children}) =>{
             </div>
         </div>
             <Header />
-               <div style={{minHeight:'35vh',backgroundColor:"#e2dee2"}}> {children}</div>
+               <div style={{minHeight:'35vh',backgroundColor:"#e2dee2"}}>  {/*Google Analytics */}
+               <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSB26235ZC"></script>
+               <script dangerouslySetInnerHTML={{
+                   __html: `
+                   window.dataLayer = window.dataLayer || [];
+                   function gtag(){dataLayer.push(arguments)}
+                   gtag('js', new Date());
+                   
+                   gtag('config', 'G-FSB26235ZC');
+                   `
+               }}></script>
+               {/*Google Analytics */}
+               {children}
+               </div>
             <Footer />
         </React.Fragment>
     )

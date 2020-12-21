@@ -91,6 +91,7 @@ const SingleBlog = ({ blog, query }) => {
             <main style={{ backgroundColor: "#e2dee2" }}>
                 <article >
                     <div className="row upperRecent " style={{backgroundColor:"#eeeeee",paddingLeft:'270px'}}>
+                   
                         <div className="col-md-12">
                             {
                                 recent === undefined ? "" : recent.length<5 ? "" : (
@@ -119,7 +120,7 @@ const SingleBlog = ({ blog, query }) => {
                         </div>
                     </div>
                     <div className="container-fluid">
-
+                   
                         <section className="mainNewsImage">
                             <div className='row'>
                                 <div class="col-sm-9 mt-5">
