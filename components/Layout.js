@@ -31,12 +31,12 @@ const Layout = ({children}) =>{
         <div style={{height:120,backgroundColor:"#2d283e"}} className="container-fluid lead">
             <div className="row">
             <div style={{marginTop:30,marginLeft:20}} className="col-md-12">
-              <a style={{textDecoration:"none"}} href="/"><h1 style={{color:"#fff"}}>{APP_NAME}</h1></a>
+              <a style={{textDecoration:"none"}} href="/blogs"><h1 style={{color:"#fff"}}>{APP_NAME}</h1></a>
             </div>
             </div>
         </div>
             <Header />
-               <div style={{minHeight:'35vh'}}> {children}</div>
+               <div style={{minHeight:'35vh',backgroundColor:"#2d283e"}}> {children}</div>
             <Footer />
         </React.Fragment>
     )
